@@ -3,6 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//для мережі
+import {HttpClientModule} from '@angular/common/http';
+import {NewsService} from './news.service';
+
+// Для матеріал дизайна
+import {MatButtonModule, MatMenuModule, MatCardModule, MatToolbarModule} from '@angular/material';
+import {MatIconModule, MatSidenavModule, MatListModule} from '@angular/material';
+
+
 
 @NgModule({
   declarations: [
@@ -10,9 +21,18 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule, NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
